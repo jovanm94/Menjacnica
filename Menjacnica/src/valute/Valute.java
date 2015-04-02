@@ -14,18 +14,21 @@ public class Valute {
 		return naziv;
 	}
 	public void setNaziv(String naziv) {
+		if(naziv == null || naziv.isEmpty()) throw new RuntimeException("Unesite naziv ponovo");
 		this.naziv = naziv;
 	}
 	public String getSkraceniNaziv() {
 		return skraceniNaziv;
 	}
 	public void setSkraceniNaziv(String skraceniNaziv) {
+		if(skraceniNaziv == null || skraceniNaziv.length() > 3 || skraceniNaziv.isEmpty()) throw new RuntimeException("Unesite skraceni naziv ponovo");
 		this.skraceniNaziv = skraceniNaziv;
 	}
 	public LinkedList<Kursevi> getKursevi() {
 		return kursevi;
 	}
 	public void setKursevi(LinkedList<Kursevi> kursevi) {
+		if(kursevi == null) throw new RuntimeException("Unesite kurseve");
 		this.kursevi = kursevi;
 	}
 	@Override
